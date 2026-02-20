@@ -1,0 +1,142 @@
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    text-align:center;
+}
+
+#carta{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    cursor:pointer;
+    animation:flutuar 2s infinite alternate;
+}
+@keyframes flutuar{
+    from{transform:translateY(0)}
+    to{transform:translateY(-10px)}
+}
+
+.container{
+    display:none;
+    background:white;
+    padding:28px 28px 22px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    max-width:420px;
+    width:90%;
+    position:relative;
+    z-index:2;
+    max-height:90vh;
+    overflow:hidden;
+}
+
+h1{
+    color:#ff4d6d;
+    margin-top:0;
+    font-size:clamp(22px,2.5vw,28px);
+}
+
+p{
+    color:#555;
+    font-size:clamp(13px,1.4vw,16px);
+    line-height:1.55;
+    margin:14px auto;
+    max-width:360px;
+}
+
+h2{
+    margin-top:8px;
+    font-size:clamp(18px,2vw,24px);
+}
+
+#foto{
+    width:clamp(140px,22vh,200px);
+    border-radius:15px;
+    margin:15px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    animation:zoom 1.5s ease;
+}
+@keyframes zoom{
+    from{transform:scale(.85);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+#texto_final_titulo{
+    font-size: 28px; 
+    margin-top: 20px"
+}
+
+#texto_final{
+    font-size: 20px; 
+    margin-top: 10px"
+}
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#sim{background:#ff4d6d;color:white;}
+#nao{background:#ddd;position:absolute;}
+
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    opacity:0;
+    pointer-events:none;
+    transition:1s;
+    z-index:9998;
+}
+
+#bigHeart{
+    color:red;
+    font-size:300px;
+    animation:pulse 1s infinite;
+}
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+.heart{
+    position:fixed;
+    color:#ff4d6d;
+    animation:subir 4s linear infinite;
+    z-index:9997;
+}
+@keyframes subir{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100vh);opacity:0;}
+}
+
+.fire{
+    position:fixed;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:white;
+    animation:explode 1s linear forwards;
+    z-index:9999;
+}
+@keyframes explode{
+    to{
+        transform:translate(var(--x),var(--y));
+        opacity:0;
+    }
+}
